@@ -1,0 +1,168 @@
+---
+const services = [
+    {
+        icon: "smile",
+        title: "Blanqueamiento Dental",
+        description: "Tratamientos avanzados para una sonrisa más blanca y brillante en una sola sesión.",
+        gradient: "from-blue-500 to-cyan-500",
+        bgGradient: "from-blue-50 to-cyan-50"
+    },
+    {
+        icon: "sparkles",
+        title: "Ortodoncia",
+        description: "Alineación dental con brackets tradicionales e invisibles para todas las edades.",
+        gradient: "from-teal-500 to-emerald-500",
+        bgGradient: "from-teal-50 to-emerald-50"
+    },
+    {
+        icon: "shield",
+        title: "Implantes Dentales",
+        description: "Soluciones permanentes para recuperar dientes perdidos con la mejor tecnología.",
+        gradient: "from-purple-500 to-pink-500",
+        bgGradient: "from-purple-50 to-pink-50"
+    },
+    {
+        icon: "stethoscope",
+        title: "Limpieza Dental",
+        description: "Profilaxis profesional para mantener tus dientes sanos y prevenir enfermedades.",
+        gradient: "from-orange-500 to-red-500",
+        bgGradient: "from-orange-50 to-red-50"
+    },
+    {
+        icon: "scissors",
+        title: "Cirugía Oral",
+        description: "Procedimientos quirúrgicos avanzados realizados con precisión y cuidado.",
+        gradient: "from-indigo-500 to-blue-500",
+        bgGradient: "from-indigo-50 to-blue-50"
+    },
+    {
+        icon: "baby",
+        title: "Odontopediatría",
+        description: "Atención dental especializada para los más pequeños en un ambiente amigable.",
+        gradient: "from-pink-500 to-rose-500",
+        bgGradient: "from-pink-50 to-rose-50"
+    }
+];
+
+// ICONOS SVG COMPACTOS
+function iconSvg(name) {
+    switch (name) {
+        case "smile":
+            return `
+        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M14.828 14.828a4 4 0 01-5.656 0M9 9h.01M15 9h.01M12 22a10 10 0 110-20 10 10 0 010 20z"/>
+        </svg>`;
+        case "sparkles":
+            return `
+        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M12 3v2m0 14v2m9-9h-2M5 12H3m15.364-6.364l-1.414 1.414M7.05 16.95l-1.414 1.414m0-11.314l1.414 1.414M16.95 16.95l1.414 1.414"/>
+        </svg>`;
+        case "shield":
+            return `
+        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>`;
+        case "stethoscope":
+            return `
+        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M6 3v6a6 6 0 0012 0V3m-6 15v3m0 0h-3m3 0h3"/>
+        </svg>`;
+        case "scissors":
+            return `
+        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24">
+          <circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4L8.5 10m0 4L20 20"/>
+        </svg>`;
+        case "baby":
+            return `
+        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M12 22a10 10 0 100-20 10 10 0 000 20zM9 9h.01M15 9h.01M8 13a4 4 0 008 0"/>
+        </svg>`;
+    }
+}
+---
+<section id="servicios" class="py-32 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+    <div class="absolute bottom-0 left-0 w-96 h-96 bg-cyan-100/20 rounded-full blur-3xl"></div>
+
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+
+        <!-- HEADER con fade -->
+        <div class="text-center mb-16 fade-on-scroll opacity-0 translate-y-8">
+            <div class="inline-block px-4 py-2 bg-teal-100 rounded-full text-teal-700 font-medium text-sm mb-4">
+                Nuestros Servicios
+            </div>
+            <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+                Tratamientos de Excelencia
+            </h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Ofrecemos una amplia gama de servicios dentales con tecnología de vanguardia
+                para cuidar tu sonrisa en cada etapa de tu vida.
+            </p>
+        </div>
+
+        <!-- GRID DE SERVICIOS -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {
+                services.map((service, index) => (
+                        <div
+                                class="group fade-on-scroll opacity-0 translate-y-8"
+                                style={`transition-delay: ${index * 100}ms`}
+                        >
+                            <div class={`h-full bg-gradient-to-br ${service.bgGradient} rounded-3xl p-8 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300`}>
+                                <div class={`w-16 h-16 bg-gradient-to-br ${service.gradient} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}
+                                     set:html={iconSvg(service.icon)}>
+                                </div>
+
+                                <h3 class="text-2xl font-bold text-gray-900 mb-4">{service.title}</h3>
+
+                                <p class="text-gray-600 leading-relaxed">{service.description}</p>
+
+                                <div class="mt-6 flex items-center text-teal-600 font-medium group-hover:gap-2 transition-all">
+                                    <span>Más información</span>
+                                    <span class="group-hover:translate-x-1 transition-transform">→</span>
+                                </div>
+                            </div>
+                        </div>
+                ))
+            }
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-16 text-center fade-on-scroll opacity-0 translate-y-8">
+            <a href="#contacto">
+                <button class="bg-gradient-to-r from-teal-500 to-cyan-500 text-white px-8 py-4 rounded-full text-lg font-medium hover:shadow-xl hover:scale-105 transition-all">
+                    Agenda tu Consulta
+                </button>
+            </a>
+        </div>
+    </div>
+</section>
+
+<script>
+    const elements = document.querySelectorAll(".fade-on-scroll");
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) entry.target.classList.add("fade-in-visible");
+        });
+    }, { threshold: 0.2 });
+
+    elements.forEach((el) => observer.observe(el));
+</script>
+
+<style>
+    .fade-in-visible {
+        opacity: 1 !important;
+        transform: translate(0, 0) !important;
+        transition: all 0.8s ease-out;
+    }
+</style>

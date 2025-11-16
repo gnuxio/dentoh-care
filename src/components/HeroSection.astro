@@ -1,0 +1,194 @@
+---
+/* No imports necesarios, todo es HTML puro */
+---
+<section
+        id="inicio"
+        class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-teal-50 via-white to-cyan-50"
+>
+    <!-- Decorative elements -->
+    <div class="absolute top-20 right-10 w-72 h-72 bg-teal-200/30 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-20 left-10 w-96 h-96 bg-cyan-200/20 rounded-full blur-3xl"></div>
+
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-32 relative z-10">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+            <!-- Left Content -->
+            <div
+                    class="space-y-8 opacity-0 translate-y-8 animate-fade-up"
+            >
+                <div class="inline-flex items-center gap-2 px-4 py-2 bg-teal-100 rounded-full">
+                    <!-- Sparkles Icon -->
+                    <svg class="w-4 h-4 text-teal-600" fill="none" stroke="currentColor" stroke-width="2"
+                         viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                              d="M12 3v2m0 14v2m9-9h-2M5 12H3m15.364-6.364l-1.414 1.414M7.05 16.95l-1.414 1.414m0-11.314l1.414 1.414M16.95 16.95l1.414 1.414" />
+                    </svg>
+                    <span class="text-sm font-medium text-teal-700">Tu Sonrisa, Nuestra Pasión</span>
+                </div>
+
+                <h1 class="text-5xl lg:text-7xl font-bold leading-tight">
+          <span
+                  class="bg-gradient-to-r from-teal-600 via-cyan-600 to-blue-600 bg-clip-text text-transparent"
+          >Sonrisas Saludables</span
+          ><br />
+                    <span class="text-gray-900">Para Toda la Vida</span>
+                </h1>
+
+                <p class="text-xl text-gray-600 leading-relaxed max-w-xl">
+                    Cuidado dental de excelencia con tecnología de vanguardia y un toque humano.
+                    Tu bienestar es nuestra prioridad.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#contacto"
+                       class="bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-600 hover:to-cyan-600 text-white px-8 py-6 rounded-full text-lg shadow-lg hover:shadow-xl transition-all group flex items-center justify-center">
+                        <!-- Calendar Icon -->
+                        <svg class="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" fill="none"
+                             stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                  d="M8 7V3m8 4V3M3 11h18M5 5h14a2 2 0 012 2v12a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2z" />
+                        </svg>
+                        Agendar Cita
+                    </a>
+
+                    <a href="#servicios"
+                       class="px-8 py-6 rounded-full text-lg border-2 border-gray-200 hover:border-teal-500 hover:text-teal-600 transition-all text-center">
+                        Ver Servicios
+                    </a>
+                </div>
+
+                <!-- Stats -->
+                <div class="grid grid-cols-3 gap-8 pt-8">
+                    <div>
+                        <div class="text-3xl font-bold text-teal-600">15+</div>
+                        <div class="text-sm text-gray-600">Años de Experiencia</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold text-teal-600">5000+</div>
+                        <div class="text-sm text-gray-600">Pacientes Felices</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold text-teal-600">98%</div>
+                        <div class="text-sm text-gray-600">Satisfacción</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Image -->
+            <div
+                    class="relative opacity-0 scale-95 animate-fade-in"
+                    style="animation-delay: 0.2s"
+            >
+                <div class="relative rounded-3xl overflow-hidden shadow-2xl">
+                    <img
+                            src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=800&q=80"
+                            alt="Consultorio dental moderno"
+                            class="w-full h-[600px] object-cover"
+                    />
+                    <div class="absolute inset-0 bg-gradient-to-t from-teal-900/20 to-transparent"></div>
+                </div>
+
+                <!-- Floating cards LEFT -->
+                <div
+                        class="absolute -left-6 top-20 bg-white rounded-2xl shadow-xl p-4 flex items-center gap-3 opacity-0 -translate-x-5 animate-slide-left"
+                        style="animation-delay: 0.5s"
+                >
+                    <div class="w-12 h-12 bg-teal-100 rounded-xl flex items-center justify-center">
+                        <!-- Shield Icon -->
+                        <svg class="w-6 h-6 text-teal-600" fill="none" stroke="currentColor" stroke-width="2"
+                             viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                  d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="font-bold text-gray-900">Tecnología</div>
+                        <div class="text-sm text-gray-600">Avanzada</div>
+                    </div>
+                </div>
+
+                <!-- Floating cards RIGHT -->
+                <div
+                        class="absolute -right-6 bottom-20 bg-white rounded-2xl shadow-xl p-4 flex items-center gap-3 opacity-0 translate-x-5 animate-slide-right"
+                        style="animation-delay: 0.7s"
+                >
+                    <div class="w-12 h-12 bg-pink-100 rounded-xl flex items-center justify-center">
+                        <!-- Heart Icon -->
+                        <svg class="w-6 h-6 text-pink-600" fill="none" stroke="currentColor" stroke-width="2"
+                             viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                  d="M4.318 6.318a4.5 4.5 0 016.364 0L12 7.636l1.318-1.318a4.5 4.5 0 116.364 6.364L12 21 4.318 12.682a4.5 4.5 0 010-6.364z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="font-bold text-gray-900">Atención</div>
+                        <div class="text-sm text-gray-600">Personalizada</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Fade-up */
+    @keyframes fade-up {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    .animate-fade-up {
+        animation: fade-up 0.8s ease-out forwards;
+    }
+
+    /* Fade-in scale */
+    @keyframes fade-in {
+        from {
+            opacity: 0;
+            transform: scale(0.9);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+    .animate-fade-in {
+        animation: fade-in 0.8s ease-out forwards;
+    }
+
+    /* Slide left */
+    @keyframes slide-left {
+        from {
+            opacity: 0;
+            transform: translateX(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    .animate-slide-left {
+        animation: slide-left 0.8s ease-out forwards;
+    }
+
+    /* Slide right */
+    @keyframes slide-right {
+        from {
+            opacity: 0;
+            transform: translateX(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    .animate-slide-right {
+        animation: slide-right 0.8s ease-out forwards;
+    }
+</style>

@@ -1,0 +1,159 @@
+---
+const testimonials = [
+    {
+        name: "María Rodríguez",
+        role: "Paciente desde 2020",
+        content:
+            "La Dra. García transformó completamente mi sonrisa. Su profesionalismo y calidez me hicieron sentir en confianza desde el primer momento. ¡Totalmente recomendada!",
+        rating: 5,
+        image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80",
+    },
+    {
+        name: "Carlos Méndez",
+        role: "Paciente desde 2019",
+        content:
+            "Excelente atención y resultados impecables. El blanqueamiento dental superó todas mis expectativas. El consultorio es moderno y muy limpio.",
+        rating: 5,
+        image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80",
+    },
+    {
+        name: "Laura Sánchez",
+        role: "Paciente desde 2021",
+        content:
+            "Después de años de miedo al dentista, finalmente encontré un lugar donde me siento cómoda. La doctora es muy paciente y explica todo con detalle.",
+        rating: 5,
+        image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80",
+    },
+];
+
+// ICONOS (Star y Quote)
+function iconSvg(name) {
+    switch (name) {
+        case "quote":
+            return `
+        <svg class="w-10 h-10 text-teal-400" fill="none" stroke="currentColor" stroke-width="2"
+             viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M9 7h.01M9 12h.01M9 17h.01M21 7h-6v10h6V7zM3 7h6v10H3V7z"/>
+        </svg>`;
+        case "star":
+            return `
+        <svg class="w-5 h-5 fill-yellow-400 text-yellow-400" viewBox="0 0 20 20">
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.97a1 1 0 
+          00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.385 
+          2.46a1 1 0 00-.364 1.118l1.287 
+          3.97c.3.922-.755 1.688-1.54 1.118l-3.385-2.46a1 1 0 
+          00-1.175 0l-3.385 2.46c-.784.57-1.838-.196-1.539-1.118l1.287-3.97a1 
+          1 0 00-.364-1.118L2.045 9.397c-.783-.57-.38-1.81.588-1.81H6.81a1 
+          1 0 00.951-.69l1.287-3.97z"/>
+        </svg>`;
+    }
+}
+---
+<section id="testimonios" class="py-32 bg-white relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-96 h-96 bg-teal-100/20 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 w-96 h-96 bg-cyan-100/20 rounded-full blur-3xl"></div>
+
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+
+        <!-- HEADER -->
+        <div class="text-center mb-16 fade-on-scroll opacity-0 translate-y-8">
+            <div class="inline-block px-4 py-2 bg-teal-100 rounded-full text-teal-700 font-medium text-sm mb-4">
+                Testimonios
+            </div>
+            <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+                Lo Que Dicen Nuestros Pacientes
+            </h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                La confianza y satisfacción de nuestros pacientes es nuestro mayor logro.
+            </p>
+        </div>
+
+        <!-- TESTIMONIALS GRID -->
+        <div class="grid md:grid-cols-3 gap-8">
+            {
+                testimonials.map((t, index) => (
+                        <div
+                                class="relative fade-on-scroll opacity-0 translate-y-8"
+                                style={`transition-delay: ${index * 150}ms`}
+                        >
+                            <div class="bg-gradient-to-br from-teal-50 to-cyan-50 rounded-3xl p-8 h-full hover:shadow-xl transition-shadow">
+
+                                <!-- Quote icon -->
+                                <div set:html={iconSvg("quote")} class="mb-6"></div>
+
+                                <!-- Stars -->
+                                <div class="flex gap-1 mb-4">
+                                    {
+                                        Array.from({ length: t.rating }).map(() => (
+                                                <span set:html={iconSvg("star")}></span>
+                                        ))
+                                    }
+                                </div>
+
+                                <p class="text-gray-700 leading-relaxed mb-6 text-lg">
+                                    "{t.content}"
+                                </p>
+
+                                <div class="flex items-center gap-4">
+                                    <img
+                                            src={t.image}
+                                            alt={t.name}
+                                            class="w-14 h-14 rounded-full object-cover border-2 border-teal-200"
+                                    />
+                                    <div>
+                                        <div class="font-bold text-gray-900">{t.name}</div>
+                                        <div class="text-sm text-gray-600">{t.role}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                ))
+            }
+        </div>
+
+        <!-- BADGES -->
+        <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 fade-on-scroll opacity-0 translate-y-8">
+            <div class="text-center">
+                <div class="text-4xl font-bold text-teal-600 mb-2">5000+</div>
+                <div class="text-gray-600">Pacientes Atendidos</div>
+            </div>
+            <div class="text-center">
+                <div class="text-4xl font-bold text-teal-600 mb-2">98%</div>
+                <div class="text-gray-600">Satisfacción</div>
+            </div>
+            <div class="text-center">
+                <div class="text-4xl font-bold text-teal-600 mb-2">15+</div>
+                <div class="text-gray-600">Años de Experiencia</div>
+            </div>
+            <div class="text-center">
+                <div class="text-4xl font-bold text-teal-600 mb-2">24/7</div>
+                <div class="text-gray-600">Emergencias</div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<script>
+    const elements = document.querySelectorAll(".fade-on-scroll");
+
+    const observer = new IntersectionObserver(
+        entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add("fade-in-visible");
+            });
+        },
+        { threshold: 0.2 }
+    );
+
+    elements.forEach(el => observer.observe(el));
+</script>
+
+<style>
+    .fade-in-visible {
+        opacity: 1 !important;
+        transform: translate(0, 0) !important;
+        transition: all 0.8s ease-out;
+    }
+</style>

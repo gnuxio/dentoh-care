@@ -1,11 +1,69 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import HeroSection from '../components/HeroSection.astro';
+import AboutSection from '../components/AboutSection.astro';
+import ServicesSection from '../components/ServicesSection.astro';
+import TestimonialsSection from '../components/TestimonialsSection.astro';
+import ContactSection from '../components/ContactSection.astro';
+import Footer from '../components/Footer.astro';
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DentalCare</title>
+    <link rel="stylesheet" href="/src/styles/global.css" />
+</head>
+
+<body class="min-h-screen bg-white">
+
+<!-- Navigation -->
+<nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 bg-transparent">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+            <div class="flex items-center gap-2">
+                <div class="w-10 h-10 bg-gradient-to-br from-teal-400 to-cyan-500 rounded-xl flex items-center justify-center">
+                    <span class="text-white font-bold text-xl">D</span>
+                </div>
+                <span class="text-2xl font-bold bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent">
+              DentalCare
+            </span>
+            </div>
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#inicio" class="text-gray-700 hover:text-teal-600 transition-colors font-medium">Inicio</a>
+                <a href="#sobre-mi" class="text-gray-700 hover:text-teal-600 transition-colors font-medium">Sobre Mí</a>
+                <a href="#servicios" class="text-gray-700 hover:text-teal-600 transition-colors font-medium">Servicios</a>
+                <a href="#testimonios" class="text-gray-700 hover:text-teal-600 transition-colors font-medium">Testimonios</a>
+                <a href="#contacto"
+                   class="bg-gradient-to-r from-teal-500 to-cyan-500 text-white px-6 py-2.5 rounded-full hover:shadow-lg hover:scale-105 transition-all font-medium">
+                    Agendar Cita
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Sections -->
+<HeroSection />
+<AboutSection />
+<ServicesSection />
+<TestimonialsSection />
+<ContactSection />
+<Footer />
+
+<!-- Scroll Script (reemplazo de useEffect + useState) -->
+<script>
+    const navbar = document.getElementById("navbar");
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+            navbar.classList.add("bg-white/95", "backdrop-blur-lg", "shadow-sm");
+            navbar.classList.remove("bg-transparent");
+        } else {
+            navbar.classList.add("bg-transparent");
+            navbar.classList.remove("bg-white/95", "backdrop-blur-lg", "shadow-sm");
+        }
+    });
+</script>
+
+</body>
+</html>
